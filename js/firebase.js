@@ -7,7 +7,7 @@ var config = {
     authDomain: "fir-8cfd6.firebaseapp.com",
     databaseURL: "https://fir-8cfd6.firebaseio.com",
     projectId: "fir-8cfd6",
-    storageBucket: "",
+    storageBucket: "fir-8cfd6.appspot.com",
     messagingSenderId: "746254766091"
  };
  firebase.initializeApp(config);

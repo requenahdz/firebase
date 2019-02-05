@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<style type="text/css">
+#imagen{
+	height: 100px;
+	width: 100px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+</style>
+</head>
+<body>
+
+
+<div id="imagen"></div>
+<div id="porcentaje">x</div>
+<div id="url">x</div>
+<input type="file" name="file" id="file">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+<script src="https://requenahdz.github.io/firebase/asset/firebase/init.js"></script>
+<script type="text/javascript">
+
+
+  $('#file').change(function(e) {
+      //Guardamos el achivo en una variable
+      var file = e.target.files[0],
+      imageType = /image.*/;
+    
+    //	Validamos que sea una imagen
+      if (!file.type.match(imageType)){
+       return;      	
+      }
+  	//Creamos un render para poder vizualizar la imagen
+      var reader = new FileReader();
+      reader.onload =function(e){
+      	 	$('#imagen').css("background-image","url('"+e.target.result+"')");
+      }
+      reader.readAsDataURL(file);
+
+      //Subimos el archivo
+       var metadata = { contentType: 'image/jpeg'};
+       var subirArchivo = firebase.storage().ref().child('imagenes/' + file.name).put(file, metadata);
+    
+      	 subirArchivo.on('state_changed', function(snapshot){
+			var progreso = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+       		$('#porcentaje').html( parseFloat(progreso).toFixed(0) + '%');     
+
+       		subirArchivo.snapshot.ref.getDownloadURL().then(function(url) {
+  			 $('#url').html(url);
+    		});
+  		});
+
+});
+
+</script>
+</body>
+</html>

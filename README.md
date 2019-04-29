@@ -1,9 +1,9 @@
 # Importar
 
 <pre><code>
-//<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
-//<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-//<script src="https://requenahdz.github.io/firebase/asset/firebase/init.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+<script src="https://requenahdz.github.io/firebase/asset/firebase/init.js"></script>
 </code></pre>
 
 

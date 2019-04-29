@@ -23,11 +23,4 @@ firebase.database().ref("personas/").orderByChild("fecha").on('value', function(
 });
 </code></pre>
 
-# Ejemplo
- 
-<pre><code>
-function guardarPublicacion(){
-firebase.database().ref('publicaciones').push().set(obj);
-}
 
-</code></pre>

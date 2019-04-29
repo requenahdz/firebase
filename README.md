@@ -1,8 +1,8 @@
 # Registrar
 <pre><code>
 firebase.database().ref('personas').push().set({
-  nombre:'Roberto'
-	fecha:'22/08/1994'
+  nombre:'Roberto',
+  fecha:'22/08/1994'
 });
 </code></pre>
 

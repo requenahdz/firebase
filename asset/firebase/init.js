@@ -1,6 +1,3 @@
-// Recuerda tener incluido estos js en el archivo html 
-// <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
-// <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
 var config = {
     apiKey: "AIzaSyCaU5TKaRincTVldEJ5sFHAaQx16Uz6SQM",
     authDomain: "fir-8cfd6.firebaseapp.com",
